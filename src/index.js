@@ -1,4 +1,4 @@
-import "./components/toDoItem.js"
+import "./toDoItem.js"
 
 const toDoListBtn = document.getElementById('to-do-btn')
 toDoListBtn.addEventListener('click' , () => addItem())

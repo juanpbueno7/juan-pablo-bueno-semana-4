@@ -8,17 +8,18 @@ class ToDoItem extends HTMLElement {
     }
 
     render() {
-        this.shadowRoot.innerHTML = 
-        `
-            <li class="item">
-                <input type="checkbox" name="task1" id="task1">
-                <label for="task1">${this.task}</label>
-                <button>Delete</button>
-            </li>
-        `
+        this.shadowRoot.innerHTML = `
+          <li class="item-container">
+            <input type="checkbox" name="task1" id="task1">
+            <label for="task1">${this.task}</label>
+            <button>Delete</button>
+          </li>
+        `;
+      
         const button = this.shadowRoot.querySelector('button');
+        button.style.backgroundColor = 'red';
         button.addEventListener('click', () => this.remove());
-    }
+      }
 
     static get observedAttributes() { return ['task']; }
 
